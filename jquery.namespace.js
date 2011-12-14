@@ -22,7 +22,7 @@
 */
 (function($, undefined) {
 	$.namespace = function(name, entity) {
-		var i, packages = name.split('.'), currPackage = this; //split the namespace and store the global context
+		var i, packages = name.split('.'), currPackage = window; //split the namespace and store the global context
 		for(i=0; i<packages.length-1; i++)
 			currPackage = (currPackage[packages[i]] = currPackage[packages[i]] || {}); //define and assign
 		currPackage[packages[i]] = entity; //set the entity to the final namespace
